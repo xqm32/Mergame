@@ -1,0 +1,38 @@
+/*
+ * Author: xqm32	Date: 25/17/18
+ * File: ./data/text.txt
+ */
+
+1. comment
+2. base_num aim len test_mode rand_appear_mode auto_mode
+3. round zero scores
+4. up down right left rotate_right exit save read autosave autoread save_option read_option autosave_option autoread_option help
+5. table
+6. text["menu"]
+7. text["help"]
+8. text["exit"]
+9. text["lose"]
+10. text["win"]
+#Default: 2 2048 8 0 1 0
+2 2048 4 0 1 0
+#Default: 1 0 0
+1 0 0
+#Default: w s d a e x s r as ar so ro aso aro h c
+w s d a e x s r as ar so ro aso aro h c
+#
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+#
+Input your choice.
+:#
+Welcome to mergame!
+
+#
+Normal exit.
+#
+You have lost.
+#
+You win.
+#

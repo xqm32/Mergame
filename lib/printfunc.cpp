@@ -46,7 +46,7 @@ int mergame::menu()
 		
 		print(text["menu"]);
 		
-		char ch;
+		std::string ch;
 		if (auto_play)
 		{
 			switch(rand()%4)
@@ -60,13 +60,26 @@ int mergame::menu()
 		}
 		else std::cin>>ch;
 		
-		if (ch == 'a') merge();
-		else if (ch == 's') {rotate_right(); merge(); rotate_right(3);}
-		else if (ch == 'd') {rotate_right(2); merge(); rotate_right(2);}
-		else if (ch == 'w') {rotate_right(3); merge(); rotate_right();}
-		else if (ch == 'r') {rotate_right(); continue;}
-		else if (ch == 'x') return 0;
-		else continue;
+		if (ch == dircon["left"]) merge();
+		else if (ch == dircon["down"]) {rotate_right(); merge(); rotate_right(3);}
+		else if (ch == dircon["right"]) {rotate_right(2); merge(); rotate_right(2);}
+		else if (ch == dircon["up"]) {rotate_right(3); merge(); rotate_right();}
+		else if (ch == dircon["rotate_right"]) {rotate_right(); continue;}
+		else if (ch == dircon["exit"]) return 0;
+		else 
+		{
+			if (ch == dircon["save"]) {std::cin>>ch; save(ch);}
+			else if (ch == dircon["read"]) {std::cin>>ch; read(ch);}
+			else if (ch == dircon["autosave"]) {save();}
+			else if (ch == dircon["autoread"]) {read();}
+			else if (ch == dircon["save_option"]) {std::cin>>ch; save_option(ch);}
+			else if (ch == dircon["read_option"]) {std::cin>>ch; read_option(ch);}
+			else if (ch == dircon["autosave_option"]) {save_option();}
+			else if (ch == dircon["autoread_option"]) {read_option();}
+			else if (ch == dircon["help"]) {std::cout<<text["help"];}
+			// else if (ch == dircon["change"]) {change();}
+			continue;
+		}
 		
 		if (rand_appear_mode) rand_appear();
 		++round;

@@ -3,7 +3,6 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include <cmath>
 #include <map>
 
 /*
@@ -18,13 +17,19 @@ class mergame
 		int numlen, round, zero, score;
 		std::vector<std::vector<int>> table;
 		std::map<std::string, std::string> text;
+		std::map<std::string, std::string> dircon;
 		void init();
 	public:
 		mergame(); ~mergame();
 		void rotate_right(const int &times=1);
 		void merge();  int try_lose() const;
 		int print_table(); void rand_appear(const int &give_num=0);
-		int menu();
+		int menu(); 
+		void change();
+		int save(const std::string &filename="data/autosave");
+		int read(const std::string &filename="data/autosave");
+		int save_option(const std::string &filename="data/autosave_option");
+		int read_option(const std::string &filename="data/autosave_option");
 };
 
 template<typename T>
